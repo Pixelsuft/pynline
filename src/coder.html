@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>Coder</title>
+</head>
+<body>
+  <textarea id="area">{{ lines }}</textarea>
+	<br>Fix 'replace': <input id="fix" type="number" value="100000" min="5" max="100000"><br>
+	<input type="button" value="Save" id="saver">
+  <script language="JavaScript" type="text/javascript">
+		document.getElementById('saver').onclick=function(){
+			var temp_value=document.getElementById('area').value;
+			for(var i=0;i<=parseInt(document.getElementById('fix').value);i++){
+				temp_value=temp_value.replace('\n','-<br>-xdd');
+				temp_value=temp_value.replace('/','-<slash>-xdd');
+				temp_value=temp_value.replace('\\','-<backslash>-xdd');
+				temp_value=temp_value.replace('#','-<hashtag>-xdd');
+			}
+			if(temp_value!==undefined && temp_value!=='')location.href+='/save/'+temp_value;
+		};
+	</script>
+	</body>
+</html>

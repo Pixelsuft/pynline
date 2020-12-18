@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Dir</title>
+</head>
+<body>
+  <script language="JavaScript" type="text/javascript">
+		function editfile(file){
+			location.href+="/edit/"+file;
+		};
+		function delfile(file){
+			location.href+="/del/"+file;
+		};
+		function create(){
+			if(document.getElementById('file_name').value!=='' && document.getElementById('file_name').value!==undefined)location.href+="/create/"+document.getElementById('file_name').value;
+		};
+		function runfile(file){
+			location.href+="/run/"+file+"/"+document.getElementById('encoding').value;
+		};
+  </script>
+	Don't forget about exit in program!
+	<br>
+	Log will be show when program ends!
+	<br>
+	{% for i in dir %}
+		<input type="button" value="Edit {{ i }}" onclick="editfile('{{ i }}')">
+		<input type="button" value="Delete {{ i }}" onclick="delfile('{{ i }}')">
+		<input type="button" value="Run {{ i }}" onclick="runfile('{{ i }}')">
+		<br>
+	{% endfor%}
+	Encoding: <input type="text" placeholder="Encoding" id="encoding" value="utf-8"><br>
+	<input type="text" id="file_name" placeholder="File name"><input type="button" value="Create file" onclick="create()">
+</body>
+</html>

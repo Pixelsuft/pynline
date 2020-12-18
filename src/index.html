@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>Main Page</title>
+</head>
+<body>
+	<input type="text" placeholder="Project To Create" id="create_text"><input type="text" placeholder="Project New Password" id="create_pass"><input type="button" value="Create" id="create">
+	<br>
+	<input type="text" placeholder="Project To Load" id="load_text"><input type="text" placeholder="Project Password" id="load_pass"><input type="button" value="Load" id="load">
+	<br>
+	<input type="text" placeholder="Project To Delete" id="del_text"><input type="text" placeholder="Project Password" id="del_pass"><input type="button" value="Delete" id="del">
+	<script language="JavaScript" type="text/javascript">
+	document.getElementById('create').onclick=function(){
+		if(document.getElementById('create_pass').value!==undefined && document.getElementById('create_pass').value!=='' && document.getElementById('create_text').value!=='' && document.getElementById('create_text').value!==undefined)location.href="/create/"+document.getElementById('create_text').value+'/'+document.getElementById('create_pass').value;
+	};
+	document.getElementById('load').onclick=function(){
+		if(document.getElementById('load_pass').value!==undefined && document.getElementById('load_pass').value!=='' && document.getElementById('load_text').value!=='' && document.getElementById('load_text').value!==undefined)location.href="/edit/"+document.getElementById('load_text').value+'/'+document.getElementById('load_pass').value;
+	};
+	document.getElementById('del').onclick=function(){
+		if(document.getElementById('del_pass').value!==undefined && document.getElementById('del_pass').value!=='' && document.getElementById('del_text').value!=='' && document.getElementById('del_text').value!==undefined)location.href="/delete/"+document.getElementById('del_text').value+'/'+document.getElementById('del_pass').value;
+	};
+	</script>
+</body>
+</html>
